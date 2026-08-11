@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cominteg Prim SRL | Rețele Inginerești & Infrastructură</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ECRAN 1: Selecție Dispozitiv -->
+  <div id="introModal" class="intro-modal">
+    <div class="intro-box">
+      <div class="intro-logo">
+        <i class="fa-solid fa-helmet-safety accent-color"></i>
+        <strong>Cominteg</strong> <span>Prim SRL</span>
+      </div>
+      <h3>Vizualizare Platformă</h3>
+      <p>Selectează dispozitivul pentru a încărca designul potrivit.</p>
+      <div class="intro-buttons">
+        <button onclick="startSite('desktop')" class="btn-device"><i class="fa-solid fa-desktop"></i> Calculator</button>
+        <button onclick="startSite('mobile')" class="btn-device outline"><i class="fa-solid fa-mobile-screen"></i> Telefon</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ECRAN 2: Animația de încărcare (Preloader) -->
+  <div class="preloader" id="preloader" style="display: none; opacity: 0;">
+    <div class="loader-brand">
+      <i class="fa-solid fa-helmet-safety accent-color"></i>
+      <span>Cominteg</span> Prim SRL
+    </div>
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <!-- ECRAN 3: Site-ul Propriu-Zis (Ascuns inițial) -->
+  <div id="main-site-wrapper" style="display: none; opacity: 0;">
+    
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container nav-wrapper">
+        <a href="#" class="brand-logo">
+          <i class="fa-solid fa-helmet-safety accent-color"></i>
+          <div class="brand-text">
+            <strong>Cominteg</strong> <span>Prim SRL</span>
+          </div>
+        </a>
+        
+        <nav class="navbar" id="navbar">
+          <ul class="nav-list">
+            <li><a href="#hero" class="nav-link active">Acasă</a></li>
+            <li><a href="#despre" class="nav-link">Despre Noi</a></li>
+            <li><a href="#servicii" class="nav-link">Servicii</a></li>
+            <li><a href="#portofoliu" class="nav-link">Portofoliu</a></li>
+          </ul>
+          <a href="#contact" class="btn btn-primary nav-btn">Contact</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-particles"></div>
+      <div class="container hero-container">
+        <div class="hero-content" data-aos="fade-up">
+          <div class="hero-badge">Excelență în Infrastructură & Rețele Inginerești</div>
+          <h1 class="hero-title">Construim infrastructura de mâine. <span>Sigur. Durabil.</span></h1>
+          <p class="hero-description">
+            Cominteg Prim SRL livrează soluții tehnice complexe, de la magistrale de apeduct și canalizare pluvială, la puncte termice și construcții rutiere de înaltă performanță.
+          </p>
+          <div class="hero-actions">
+            <a href="#portofoliu" class="btn btn-primary btn-lg">Explorează Lucrările</a>
+            <a href="#despre" class="btn btn-outline btn-lg">Descoperă Compania</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="despre" class="about section">
+      <div class="container about-grid">
+        <div class="about-image-wrapper" data-aos="fade-right">
+          <img src="descriere.jpeg" alt="Șantier Rețele Inginerești Cominteg Prim SRL" class="about-img main-img">
+          <div class="experience-card">
+            <i class="fa-solid fa-certificate"></i>
+            <h4>Calitate Garantată</h4>
+            <p>Standarde tehnice superioare</p>
+          </div>
+        </div>
+        <div class="about-content" data-aos="fade-left">
+          <span class="section-tag">Despre Noi</span>
+          <h2 class="section-title">Experți în <span>rețele inginerești</span> și infrastructură</h2>
+          <p class="lead-text">
+            <strong>Cominteg Prim SRL</strong> este o companie de top specializată în proiectarea, execuția și reabilitarea de rețele inginerești și infrastructură rutieră.
+          </p>
+          <p>
+            Dispunând de o echipă tehnică înalt calificată și un parc de utilaje performant, executăm cu precizie lucrări complexe: de la magistrale de apeduct și rețele de canalizare pluvială, la infrastructură pentru puncte termice tehnologice, coordonând implementarea sistemelor în cascadă. 
+          </p>
+          <p>
+            Fiecare proiect gestionat de <strong>Cominteg Prim SRL</strong> reflectă angajamentul nostru ferm pentru calitate, durabilitate, siguranță și funcționalitate pe termen lung a rețelelor inginerești construite, respectând cu strictețe normele de execuție obiective.
+          </p>
+          <ul class="feature-list">
+            <li><i class="fa-solid fa-check"></i> Execuție precisă a rețelelor inginerești complexe (apă, canalizare, termoficare)</li>
+            <li><i class="fa-solid fa-check"></i> Management de șantier eficient, bazat pe evaluări tehnice riguroase</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicii" class="services section bg-dark">
+      <div class="container">
+        <div class="section-header text-center light-text" data-aos="fade-up">
+          <span class="section-tag">Domenii de Activitate</span>
+          <h2 class="section-title">Construcții Generale, Rețele Inginerești</h2>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon"><i class="fa-solid fa-water"></i></div>
+            <h3>Rețele Edilitare & Canalizare</h3>
+            <p>Construcție de rețele pentru ape pluviale, magistrale de apă potabilă și subtraversări complexe de bulevarde.</p>
+          </div>
+          
+
+          <!-- Service 3: Termoficare -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-icon"><i class="fa-solid fa-temperature-high"></i></div>
+            <h3>Termoficare</h3>
+            <p>Proiectare, montaj și reabilitare pentru rețele termice magistrale, puncte termice tehnologice și sisteme avansate de încălzire în cascadă.</p>
+          </div>
+
+          <!-- Service 4: Apeduct -->
+          <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+            <h3>Apeduct</h3>
+            <p>Execuție și extindere de magistrale de alimentare cu apă potabilă, branșamente hidraulice și rețele de înaltă presiune.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portofoliu" class="portfolio section bg-gray">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <span class="section-tag">Experiență Demonstrată</span>
+          <h2 class="section-title">Proiecte de Referință</h2>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Project 1 -->
+          <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="100">
+            <div class="portfolio-img">
+              <img src="bacio.jpeg" alt="Rețea de canalizare pluvială - Satul Geman">
+              <div class="portfolio-overlay">
+                <a href="#" class="view-btn"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Rețele Edilitare</span>
+              <h3>Rețea de canalizare pluvială - Satul Geman</h3>
+              <p>Execuția complexă a rețelei de colectare a apelor pluviale pentru un ansamblu rezidențial din zona Satul Geman, asigurând gestionarea eficientă și sigură a apelor meteorice.</p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="200">
+            <div class="portfolio-img">
+              <img src="poza aeroport.jpeg" alt="Punct Termic - Aeroportul Iași">
+              <div class="portfolio-overlay">
+                <a href="#" class="view-btn"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Instalații Termice</span>
+              <h3>Punct Termic - Aeroportul Iași</h3>
+              <p>Amenajarea și implementarea punctului termic tehnologic de înaltă performanță aferent terminalului Aeroportului Internațional Iași, respectând cele mai stricte norme de calitate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container contact-grid" data-aos="fade-up">
+        <div class="contact-info">
+          <span class="section-tag">Contactați-ne</span>
+          <h2 class="section-title">Sunteți gata să începeți următorul proiect?</h2>
+          <p>Echipa Cominteg Prim SRL vă stă la dispoziție pentru expertize tehnice, oferte de preț și consultanță în execuție.</p>
+          
+          <div class="contact-methods">
+            <div class="method">
+              <div class="method-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="method-details">
+                <h4>Sediul Central</h4>
+                <p>Str. Albisoara 84/6, Chișinău, Republica Moldova</p>
+              </div>
+            </div>
+            <div class="method">
+              <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="method-details">
+                <h4>Adresă Email</h4>
+                <p>info.comintegprim@gmail.com</p>
+              </div>
+            </div>
+            <div class="method">
+              <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="method-details">
+                <h4>Telefon</h4>
+                <p>061 166 222</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-map">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.165914999652!2d28.82446177732013!3d47.03697502713771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97d006e318c57%3A0xd6ed257e0d6b4a42!2sCominteg%20Prim%20SRL!5e0!3m2!1sro!2s!4v1786283484697!5m2!1sro!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-bottom">
+        <div class="footer-logo">
+          <i class="fa-solid fa-helmet-safety"></i> <strong>Cominteg</strong> Prim SRL
+        </div>
+        
+        <!-- ICONIȚELE SOCIALE & CONTACT -->
+        <div class="footer-socials">
+          <!-- Desktop + Mobil (Apar mereu) -->
+          <a href="https://www.facebook.com/profile.php?id=61581387104600" target="_blank" class="social-icon fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/comintegprim/" target="_blank" class="social-icon ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          
+          <!-- Doar Mobil / Simulare (Apar doar pe telefon) -->
+          <a href="tel:+37361166222" class="social-icon mobile-only phone" title="Sună Normal"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://wa.me/37361166222" target="_blank" class="social-icon mobile-only wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="viber://chat?number=%2B37361166222" target="_blank" class="social-icon mobile-only viber" title="Viber"><i class="fa-brands fa-viber"></i></a>
+        </div>
+
+        <p>&copy; 2026 Cominteg Prim SRL. Toate drepturile rezervate. Execuție la cele mai înalte standarde.</p>
+      </div>
+    </footer>
+  </div> <!-- Închidere main-site-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
