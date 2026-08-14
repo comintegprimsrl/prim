@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cominteg Prim SRL | Rețele Inginerești & Infrastructură</title>
   
-  <!-- Iconița site-ului (Favicon) -->
   <link rel="icon" type="image/x-icon" href="iconcominteg.ico?v=3">
-  
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,16 +21,16 @@
         <i class="fa-solid fa-helmet-safety accent-color"></i>
         <strong>Cominteg</strong> <span>Prim SRL</span>
       </div>
-      <h3>Vizualizare Platformă</h3>
-      <p>Selectează dispozitivul pentru a încărca designul potrivit.</p>
+      <h3 data-i18n="intro_title">Vizualizare Platformă</h3>
+      <p data-i18n="intro_desc">Selectează dispozitivul pentru a încărca designul potrivit.</p>
       <div class="intro-buttons">
-        <button onclick="startSite('desktop')" class="btn-device"><i class="fa-solid fa-desktop"></i> Calculator</button>
-        <button onclick="startSite('mobile')" class="btn-device outline"><i class="fa-solid fa-mobile-screen"></i> Telefon</button>
+        <button onclick="startSite('desktop')" class="btn-device"><i class="fa-solid fa-desktop"></i> <span data-i18n="intro_btn_pc">Calculator</span></button>
+        <button onclick="startSite('mobile')" class="btn-device outline"><i class="fa-solid fa-mobile-screen"></i> <span data-i18n="intro_btn_mob">Telefon</span></button>
       </div>
     </div>
   </div>
 
-  <!-- ECRAN 2: Animația de încărcare (Preloader Cinematic) -->
+  <!-- ECRAN 2: Preloader -->
   <div class="preloader" id="preloader" style="display: none; opacity: 0;">
     <div class="loader-brand">
       <i class="fa-solid fa-helmet-safety accent-color"></i>
@@ -58,12 +56,20 @@
         
         <nav class="navbar" id="navbar">
           <ul class="nav-list">
-            <li><a href="#hero" class="nav-link active">Acasă</a></li>
-            <li><a href="#despre" class="nav-link">Despre Noi</a></li>
-            <li><a href="#servicii" class="nav-link">Servicii</a></li>
-            <li><a href="#portofoliu" class="nav-link">Portofoliu</a></li>
+            <li><a href="#hero" class="nav-link active" data-i18n="nav_home">Acasă</a></li>
+            <li><a href="#despre" class="nav-link" data-i18n="nav_about">Despre Noi</a></li>
+            <li><a href="#servicii" class="nav-link" data-i18n="nav_services">Servicii</a></li>
+            <li><a href="#portofoliu" class="nav-link" data-i18n="nav_portfolio">Portofoliu</a></li>
           </ul>
-          <a href="#contact" class="btn btn-primary nav-btn">Contact</a>
+          <a href="#contact" class="btn btn-primary nav-btn" data-i18n="nav_contact">Contact</a>
+          
+          <!-- Schimbător Limbă (Desktop) -->
+          <div class="lang-switcher">
+            <i class="fa-solid fa-globe lang-icon"></i>
+            <button onclick="changeLanguage('ro')" class="lang-btn active" data-lang="ro">RO</button>
+            <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+            <button onclick="changeLanguage('ru')" class="lang-btn" data-lang="ru">RU</button>
+          </div>
         </nav>
 
         <div class="menu-toggle" id="menu-toggle">
@@ -78,14 +84,14 @@
       <div class="hero-particles"></div>
       <div class="container hero-container">
         <div class="hero-content" data-aos="fade-up">
-          <div class="hero-badge">Excelență în Infrastructură & Rețele Inginerești</div>
-          <h1 class="hero-title">Construim infrastructura de mâine. <span>Sigur. Durabil.</span></h1>
-          <p class="hero-description">
+          <div class="hero-badge" data-i18n="hero_badge">Excelență în Infrastructură & Rețele Inginerești</div>
+          <h1 class="hero-title" data-i18n="hero_title">Construim infrastructura de mâine. <span>Sigur. Durabil.</span></h1>
+          <p class="hero-description" data-i18n="hero_desc">
             Cominteg Prim SRL livrează soluții tehnice complexe, de la magistrale de apeduct și canalizare pluvială, la puncte termice și construcții rutiere de înaltă performanță.
           </p>
           <div class="hero-actions">
-            <a href="#portofoliu" class="btn btn-primary btn-lg">Explorează Lucrările</a>
-            <a href="#despre" class="btn btn-outline btn-lg">Descoperă Compania</a>
+            <a href="#portofoliu" class="btn btn-primary btn-lg" data-i18n="hero_btn1">Explorează Lucrările</a>
+            <a href="#despre" class="btn btn-outline btn-lg" data-i18n="hero_btn2">Descoperă Compania</a>
           </div>
         </div>
       </div>
@@ -98,25 +104,25 @@
           <img src="descriere.jpeg" alt="Șantier Rețele Inginerești Cominteg Prim SRL" class="about-img main-img">
           <div class="experience-card">
             <i class="fa-solid fa-certificate"></i>
-            <h4>Calitate Garantată</h4>
-            <p>Standarde tehnice superioare</p>
+            <h4 data-i18n="qual_title">Calitate Garantată</h4>
+            <p data-i18n="qual_desc">Standarde tehnice superioare</p>
           </div>
         </div>
         <div class="about-content" data-aos="fade-left">
-          <span class="section-tag">Despre Noi</span>
-          <h2 class="section-title">Experți în <span>rețele inginerești</span> și infrastructură</h2>
-          <p class="lead-text">
+          <span class="section-tag" data-i18n="about_tag">Despre Noi</span>
+          <h2 class="section-title" data-i18n="about_title">Experți în <span>rețele inginerești</span> și infrastructură</h2>
+          <p class="lead-text" data-i18n="about_lead">
             <strong>Cominteg Prim SRL</strong> este o companie de top specializată în proiectarea, execuția și reabilitarea de rețele inginerești și infrastructură rutieră.
           </p>
-          <p>
+          <p data-i18n="about_p1">
             Dispunând de o echipă tehnică înalt calificată și un parc de utilaje performant, executăm cu precizie lucrări complexe: de la magistrale de apeduct și rețele de canalizare pluvială, la infrastructură pentru puncte termice tehnologice, coordonând implementarea sistemelor în cascadă. 
           </p>
-          <p>
+          <p data-i18n="about_p2">
             Fiecare proiect gestionat de <strong>Cominteg Prim SRL</strong> reflectă angajamentul nostru ferm pentru calitate, durabilitate, siguranță și funcționalitate pe termen lung a rețelelor inginerești construite, respectând cu strictețe normele de execuție obiective.
           </p>
           <ul class="feature-list">
-            <li><i class="fa-solid fa-check"></i> Execuție precisă a rețelelor inginerești complexe (apă, canalizare, termoficare)</li>
-            <li><i class="fa-solid fa-check"></i> Management de șantier eficient, bazat pe evaluări tehnice riguroase</li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="about_list1">Execuție precisă a rețelelor inginerești complexe (apă, canalizare, termoficare)</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="about_list2">Management de șantier eficient, bazat pe evaluări tehnice riguroase</span></li>
           </ul>
         </div>
       </div>
@@ -126,37 +132,27 @@
     <section id="servicii" class="services section bg-dark">
       <div class="container">
         <div class="section-header text-center light-text" data-aos="fade-up">
-          <span class="section-tag">Domenii de Activitate</span>
-          <h2 class="section-title">Servicii Integrate de Construcții</h2>
+          <span class="section-tag" data-i18n="serv_tag">Domenii de Activitate</span>
+          <h2 class="section-title" data-i18n="serv_title">Servicii Integrate de Construcții</h2>
         </div>
 
         <div class="services-grid">
-          <!-- Service 1 -->
           <div class="service-card" data-aos="fade-up" data-aos-delay="100">
             <div class="service-icon"><i class="fa-solid fa-water"></i></div>
-            <h3>Rețele Edilitare & Canalizare</h3>
-            <p>Construcție de rețele pentru ape pluviale, magistrale de apă potabilă și subtraversări complexe de bulevarde.</p>
+            <h3 data-i18n="serv1_title">Rețele Edilitare & Canalizare</h3>
+            <p data-i18n="serv1_desc">Construcție de rețele pentru ape pluviale, magistrale de apă potabilă și subtraversări complexe de bulevarde.</p>
           </div>
           
-          <!-- Service 2 -->
           <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-icon"><i class="fa-solid fa-road"></i></div>
-            <h3>Construcții Rutiere</h3>
-            <p>Asfaltare, frezare, stabilizare de terenuri și execuție de drumuri de acces din piatră pentru șantiere și complexe rezidențiale.</p>
-          </div>
-
-          <!-- Service 3: Termoficare -->
-          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
             <div class="service-icon"><i class="fa-solid fa-temperature-high"></i></div>
-            <h3>Termoficare</h3>
-            <p>Proiectare, montaj și reabilitare pentru rețele termice magistrale, puncte termice tehnologice și sisteme avansate de încălzire în cascadă.</p>
+            <h3 data-i18n="serv2_title">Termoficare</h3>
+            <p data-i18n="serv2_desc">Proiectare, montaj și reabilitare pentru rețele termice magistrale, puncte termice tehnologice și sisteme avansate de încălzire în cascadă.</p>
           </div>
 
-          <!-- Service 4: Apeduct -->
-          <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
             <div class="service-icon"><i class="fa-solid fa-faucet-drip"></i></div>
-            <h3>Apeduct</h3>
-            <p>Execuție și extindere de magistrale de alimentare cu apă potabilă, branșamente hidraulice și rețele de înaltă presiune.</p>
+            <h3 data-i18n="serv3_title">Apeduct</h3>
+            <p data-i18n="serv3_desc">Execuție și extindere de magistrale de alimentare cu apă potabilă, branșamente hidraulice și rețele de înaltă presiune.</p>
           </div>
         </div>
       </div>
@@ -166,38 +162,31 @@
     <section id="portofoliu" class="portfolio section bg-gray">
       <div class="container">
         <div class="section-header text-center" data-aos="fade-up">
-          <span class="section-tag">Experiență Demonstrată</span>
-          <h2 class="section-title">Proiecte de Referință</h2>
+          <span class="section-tag" data-i18n="port_tag">Experiență Demonstrată</span>
+          <h2 class="section-title" data-i18n="port_title">Proiecte de Referință</h2>
         </div>
 
         <div class="portfolio-grid">
-          <!-- Project 1 -->
           <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="100">
             <div class="portfolio-img">
-              <img src="bacio.jpeg" alt="Rețea de canalizare pluvială - Băcioi">
-              <div class="portfolio-overlay">
-                <a href="#" class="view-btn"><i class="fa-solid fa-arrow-right"></i></a>
-              </div>
+              <img src="bacio.jpeg" alt="Rețea de canalizare pluvială - Satul German">
+              <div class="portfolio-overlay"><a href="#" class="view-btn"><i class="fa-solid fa-arrow-right"></i></a></div>
             </div>
             <div class="portfolio-info">
-              <span class="portfolio-category">Rețele Edilitare</span>
-              <h3>Rețea de canalizare pluvială - Băcioi</h3>
-              <p>Execuția complexă a rețelei de colectare a apelor pluviale pentru un ansamblu rezidențial din zona Băcioi, asigurând gestionarea eficientă și sigură a apelor meteorice.</p>
+              <span class="portfolio-category" data-i18n="port1_cat">Rețele Edilitare</span>
+              <h3 data-i18n="port1_title">Rețea de canalizare pluvială - Satul German</h3>
+              <p data-i18n="port1_desc">Execuția complexă a rețelei de colectare a apelor pluviale pentru un ansamblu rezidențial din zona Satul German, asigurând gestionarea eficientă și sigură a apelor meteorice.</p>
             </div>
           </div>
-
-          <!-- Project 2 -->
           <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="200">
             <div class="portfolio-img">
               <img src="poza aeroport.jpeg" alt="Punct Termic - Aeroportul Iași">
-              <div class="portfolio-overlay">
-                <a href="#" class="view-btn"><i class="fa-solid fa-arrow-right"></i></a>
-              </div>
+              <div class="portfolio-overlay"><a href="#" class="view-btn"><i class="fa-solid fa-arrow-right"></i></a></div>
             </div>
             <div class="portfolio-info">
-              <span class="portfolio-category">Instalații Termice</span>
-              <h3>Punct Termic - Aeroportul Iași</h3>
-              <p>Amenajarea și implementarea punctului termic tehnologic de înaltă performanță aferent terminalului Aeroportului Internațional Iași, respectând cele mai stricte norme de calitate.</p>
+              <span class="portfolio-category" data-i18n="port2_cat">Instalații Termice</span>
+              <h3 data-i18n="port2_title">Punct Termic - Aeroportul Iași</h3>
+              <p data-i18n="port2_desc">Amenajarea și implementarea punctului termic tehnologic de înaltă performanță aferent terminalului Aeroportului Internațional Iași, respectând cele mai stricte norme de calitate.</p>
             </div>
           </div>
         </div>
@@ -208,29 +197,29 @@
     <section id="contact" class="contact section">
       <div class="container contact-grid" data-aos="fade-up">
         <div class="contact-info">
-          <span class="section-tag">Contactați-ne</span>
-          <h2 class="section-title">Sunteți gata să începeți următorul proiect?</h2>
-          <p>Echipa Cominteg Prim SRL vă stă la dispoziție pentru expertize tehnice, oferte de preț și consultanță în execuție.</p>
+          <span class="section-tag" data-i18n="cont_tag">Contactați-ne</span>
+          <h2 class="section-title" data-i18n="cont_title">Sunteți gata să începeți următorul proiect?</h2>
+          <p data-i18n="cont_desc">Echipa Cominteg Prim SRL vă stă la dispoziție pentru expertize tehnice, oferte de preț și consultanță în execuție.</p>
           
           <div class="contact-methods">
             <div class="method">
               <div class="method-icon"><i class="fa-solid fa-map-location-dot"></i></div>
               <div class="method-details">
-                <h4>Sediul Central</h4>
-                <p>Strada Albişoara 84/6, Chișinău, Republica Moldova</p>
+                <h4 data-i18n="cont_hq">Sediul Central</h4>
+                <p data-i18n="cont_hq_desc">Strada Albişoara 84/6, Chișinău, Republica Moldova</p>
               </div>
             </div>
             <div class="method">
               <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
               <div class="method-details">
-                <h4>Adresă Email</h4>
+                <h4 data-i18n="cont_email">Adresă Email</h4>
                 <p>office@e-confort.md</p>
               </div>
             </div>
             <div class="method">
               <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
               <div class="method-details">
-                <h4>Telefon</h4>
+                <h4 data-i18n="cont_phone">Telefon</h4>
                 <p>061 166 222</p>
               </div>
             </div>
@@ -250,7 +239,6 @@
           <i class="fa-solid fa-helmet-safety"></i> <strong>Cominteg</strong> Prim SRL
         </div>
         
-        <!-- ICONIȚELE SOCIALE & CONTACT -->
         <div class="footer-socials">
           <a href="https://www.facebook.com/profile.php?id=61581387104600" target="_blank" class="social-icon fb" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/comintegprim/" target="_blank" class="social-icon ig" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -260,12 +248,20 @@
           <a href="https://wa.me/37361166222" target="_blank" class="social-icon mobile-only wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="viber://chat?number=%2B37361166222" target="_blank" class="social-icon mobile-only viber" title="Viber"><i class="fa-brands fa-viber"></i></a>
         </div>
+        
+        <!-- Schimbător Limbă (Telefon) -->
+        <div class="footer-lang-switcher">
+          <i class="fa-solid fa-globe lang-icon"></i>
+          <button onclick="changeLanguage('ro')" class="lang-btn active" data-lang="ro">RO</button>
+          <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">EN</button>
+          <button onclick="changeLanguage('ru')" class="lang-btn" data-lang="ru">RU</button>
+        </div>
 
-        <p>&copy; 2026 Cominteg Prim SRL. Toate drepturile rezervate. Execuție la cele mai înalte standarde.</p>
+        <p data-i18n="footer_rights">&copy; 2026 Cominteg Prim SRL. Toate drepturile rezervate. Execuție la cele mai înalte standarde.</p>
       </div>
     </footer>
     
-  </div> <!-- Închidere main-site-wrapper -->
+  </div> 
 
   <script src="script.js"></script>
 </body>
