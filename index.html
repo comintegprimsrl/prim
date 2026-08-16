@@ -47,6 +47,7 @@
     <!-- Header -->
     <header class="header" id="header">
       <div class="container nav-wrapper">
+        <!-- LOGO STÂNGA -->
         <a href="#" class="brand-logo">
           <i class="fa-solid fa-helmet-safety accent-color"></i>
           <div class="brand-text">
@@ -62,18 +63,21 @@
             <li><a href="#portofoliu" class="nav-link" data-i18n="nav_portfolio">Portofoliu</a></li>
           </ul>
           <a href="#contact" class="btn btn-primary nav-btn" data-i18n="nav_contact">Contact</a>
-          
-          <!-- Schimbător Limbă (Desktop) -->
-          <div class="lang-switcher">
-            <i class="fa-solid fa-globe lang-icon"></i>
+        </nav>
+
+        <!-- ACȚIUNI DREAPTA (Limbi + Meniu) -->
+        <div class="header-actions">
+          <!-- Schimbător Limbă Ultra-Premium -->
+          <div class="ultra-lang-switcher">
+            <div class="lang-slider"></div>
             <button onclick="changeLanguage('ro')" class="lang-btn active" data-lang="ro">RO</button>
             <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">EN</button>
             <button onclick="changeLanguage('ru')" class="lang-btn" data-lang="ru">RU</button>
           </div>
-        </nav>
 
-        <div class="menu-toggle" id="menu-toggle">
-          <i class="fa-solid fa-bars"></i>
+          <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
         </div>
       </div>
     </header>
@@ -117,13 +121,43 @@
           <p data-i18n="about_p1">
             Dispunând de o echipă tehnică înalt calificată și un parc de utilaje performant, executăm cu precizie lucrări complexe: de la magistrale de apeduct și rețele de canalizare pluvială, la infrastructură pentru puncte termice tehnologice, coordonând implementarea sistemelor în cascadă. 
           </p>
-          <p data-i18n="about_p2">
-            Fiecare proiect gestionat de <strong>Cominteg Prim SRL</strong> reflectă angajamentul nostru ferm pentru calitate, durabilitate, siguranță și funcționalitate pe termen lung a rețelelor inginerești construite, respectând cu strictețe normele de execuție obiective.
-          </p>
-          <ul class="feature-list">
-            <li><i class="fa-solid fa-check"></i> <span data-i18n="about_list1">Execuție precisă a rețelelor inginerești complexe (apă, canalizare, termoficare)</span></li>
-            <li><i class="fa-solid fa-check"></i> <span data-i18n="about_list2">Management de șantier eficient, bazat pe evaluări tehnice riguroase</span></li>
-          </ul>
+
+          <!-- CERTIFICATE ISO OFICIALE -->
+          <div class="iso-badges-container">
+            <div class="iso-badge-card" title="Certificat ISO 9001">
+              <div class="iso-official-seal">
+                <span class="iso-text">ISO</span>
+                <span class="iso-num">9001</span>
+              </div>
+              <div class="iso-details">
+                <strong>ISO 9001</strong>
+                <span data-i18n="iso_9001">Managementul Calității</span>
+              </div>
+            </div>
+            
+            <div class="iso-badge-card" title="Certificat ISO 14001">
+              <div class="iso-official-seal">
+                <span class="iso-text">ISO</span>
+                <span class="iso-num">14001</span>
+              </div>
+              <div class="iso-details">
+                <strong>ISO 14001</strong>
+                <span data-i18n="iso_14001">Management de Mediu</span>
+              </div>
+            </div>
+
+            <div class="iso-badge-card" title="Certificat ISO 45001">
+              <div class="iso-official-seal">
+                <span class="iso-text">ISO</span>
+                <span class="iso-num">45001</span>
+              </div>
+              <div class="iso-details">
+                <strong>ISO 45001</strong>
+                <span data-i18n="iso_45001">Sănătate și Securitate Ocupațională</span>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -133,7 +167,7 @@
       <div class="container">
         <div class="section-header text-center light-text" data-aos="fade-up">
           <span class="section-tag" data-i18n="serv_tag">Domenii de Activitate</span>
-          <h2 class="section-title" data-i18n="serv_title">Servicii Integrate de Construcții</h2>
+          <h2 class="section-title" data-i18n="serv_title">Construcții Generale – Sisteme Inginerești</h2>
         </div>
 
         <div class="services-grid">
@@ -247,14 +281,6 @@
           <a href="tel:+37361166222" class="social-icon mobile-only phone" title="Sună Normal"><i class="fa-solid fa-phone"></i></a>
           <a href="https://wa.me/37361166222" target="_blank" class="social-icon mobile-only wa" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           <a href="viber://chat?number=%2B37361166222" target="_blank" class="social-icon mobile-only viber" title="Viber"><i class="fa-brands fa-viber"></i></a>
-        </div>
-        
-        <!-- Schimbător Limbă (Telefon) -->
-        <div class="footer-lang-switcher">
-          <i class="fa-solid fa-globe lang-icon"></i>
-          <button onclick="changeLanguage('ro')" class="lang-btn active" data-lang="ro">RO</button>
-          <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">EN</button>
-          <button onclick="changeLanguage('ru')" class="lang-btn" data-lang="ru">RU</button>
         </div>
 
         <p data-i18n="footer_rights">&copy; 2026 Cominteg Prim SRL. Toate drepturile rezervate. Execuție la cele mai înalte standarde.</p>
