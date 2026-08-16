@@ -15,6 +15,7 @@ const translations = {
     about_p1: "Dispunând de o echipă tehnică înalt calificată și un parc de utilaje performant, executăm cu precizie lucrări complexe: de la magistrale de apeduct și rețele de canalizare pluvială, la infrastructură pentru puncte termice tehnologice, coordonând implementarea sistemelor în cascadă.",
     about_p2: "Fiecare proiect gestionat de <strong>Cominteg Prim SRL</strong> reflectă angajamentul nostru ferm pentru calitate, durabilitate, siguranță și funcționalitate pe termen lung a rețelelor inginerești construite, respectând cu strictețe normele de execuție obiective.",
     about_list1: "Execuție precisă a rețelelor inginerești complexe (apă, canalizare, termoficare)", about_list2: "Management de șantier eficient, bazat pe evaluări tehnice riguroase",
+    iso_9001: "Managementul Calității", iso_14001: "Management de Mediu", iso_45001: "Sănătate și Securitate",
     qual_title: "Calitate Garantată", qual_desc: "Standarde tehnice superioare",
     serv_tag: "Domenii de Activitate", serv_title: "Servicii Integrate de Construcții",
     serv1_title: "Rețele Edilitare & Canalizare", serv1_desc: "Construcție de rețele pentru ape pluviale, magistrale de apă potabilă și subtraversări complexe de bulevarde.",
@@ -24,10 +25,7 @@ const translations = {
     port1_cat: "Rețele Edilitare", port1_title: "Rețea de canalizare pluvială - Satul German", port1_desc: "Execuția complexă a rețelei de colectare a apelor pluviale pentru un ansamblu rezidențial din zona Satul German, asigurând gestionarea eficientă și sigură a apelor meteorice.",
     port2_cat: "Instalații Termice", port2_title: "Punct Termic - Aeroportul Iași", port2_desc: "Amenajarea și implementarea punctului termic tehnologic de înaltă performanță aferent terminalului Aeroportului Internațional Iași, respectând cele mai stricte norme de calitate.",
     cont_tag: "Contactați-ne", cont_title: "Sunteți gata să începeți următorul proiect?", cont_desc: "Echipa Cominteg Prim SRL vă stă la dispoziție pentru expertize tehnice, oferte de preț și consultanță în execuție.",
-    cont_hq: "Sediul Central", 
-    cont_hq_desc: "Strada Albişoara 84/6, Chișinău, Republica Moldova", 
-    cont_email: "Adresă Email", 
-    cont_phone: "Telefon",
+    cont_hq: "Sediul Central", cont_hq_desc: "Strada Albişoara 84/6, Chișinău, Republica Moldova", cont_email: "Adresă Email", cont_phone: "Telefon",
     footer_rights: "&copy; 2026 Cominteg Prim SRL. Toate drepturile rezervate. Execuție la cele mai înalte standarde."
   },
   en: {
@@ -42,6 +40,7 @@ const translations = {
     about_p1: "With a highly qualified technical team and high-performance equipment, we precisely execute complex works: from aqueduct mains and stormwater drainage networks to infrastructure for thermal points.",
     about_p2: "Every project managed by <strong>Cominteg Prim SRL</strong> reflects our firm commitment to quality, durability, safety, and long-term functionality, strictly complying with execution standards.",
     about_list1: "Precise execution of complex engineering networks (water, sewage, heating)", about_list2: "Efficient site management, based on rigorous technical evaluations",
+    iso_9001: "Quality Management", iso_14001: "Environmental Management", iso_45001: "Health & Safety",
     qual_title: "Guaranteed Quality", qual_desc: "Superior technical standards",
     serv_tag: "Areas of Activity", serv_title: "Integrated Construction Services",
     serv1_title: "Edilitary & Sewage Networks", serv1_desc: "Construction of stormwater networks, drinking water mains, and complex boulevard undercrossings.",
@@ -51,10 +50,7 @@ const translations = {
     port1_cat: "Edilitary Networks", port1_title: "Stormwater drainage network - Satul German", port1_desc: "Complex execution of the stormwater collection network for a residential complex in the Satul German area, ensuring efficient and safe management of meteoric waters.",
     port2_cat: "Thermal Installations", port2_title: "Thermal Point - Iași Airport", port2_desc: "Arrangement and implementation of the high-performance technological thermal point for the Iași International Airport terminal, respecting the strictest quality standards.",
     cont_tag: "Contact Us", cont_title: "Ready to start your next project?", cont_desc: "The Cominteg Prim SRL team is at your disposal for technical expertise, price offers, and execution consulting.",
-    cont_hq: "Headquarters", 
-    cont_hq_desc: "84/6 Albisoara Street, Chișinău, Republic of Moldova", 
-    cont_email: "Email Address", 
-    cont_phone: "Phone",
+    cont_hq: "Headquarters", cont_hq_desc: "84/6 Albisoara Street, Chișinău, Republic of Moldova", cont_email: "Email Address", cont_phone: "Phone",
     footer_rights: "&copy; 2026 Cominteg Prim SRL. All rights reserved. Execution at the highest standards."
   },
   ru: {
@@ -69,6 +65,7 @@ const translations = {
     about_p1: "Имея высококвалифицированную техническую команду и современное оборудование, мы точно выполняем сложные работы: от магистралей водоснабжения до инфраструктуры технологических тепловых пунктов.",
     about_p2: "Каждый проект <strong>Cominteg Prim SRL</strong> отражает нашу твердую приверженность качеству, долговечности, безопасности и долгосрочной функциональности.",
     about_list1: "Точное выполнение сложных инженерных сетей (вода, канализация, отопление)", about_list2: "Эффективное управление объектом на основе строгих технических оценок",
+    iso_9001: "Менеджмент качества", iso_14001: "Экологический менеджмент", iso_45001: "Охрана труда",
     qual_title: "Гарантия качества", qual_desc: "Высокие технические стандарты",
     serv_tag: "Направления деятельности", serv_title: "Комплексные строительные услуги",
     serv1_title: "Инженерные и канализационные сети", serv1_desc: "Строительство сетей ливневой канализации, магистралей питьевой воды и сложных подземных переходов бульваров.",
@@ -78,13 +75,13 @@ const translations = {
     port1_cat: "Инженерные сети", port1_title: "Сеть ливневой канализации - Satul German", port1_desc: "Комплексное строительство сети сбора ливневых вод для жилого комплекса в районе Satul German, обеспечивающее безопасное управление сточными водами.",
     port2_cat: "Тепловые установки", port2_title: "Тепловой пункт - Аэропорт Яссы", port2_desc: "Обустройство высокопроизводительного технологического теплового пункта для терминала Международного аэропорта Яссы.",
     cont_tag: "Свяжитесь с нами", cont_title: "Готовы начать ваш следующий проект?", cont_desc: "Команда Cominteg Prim SRL к вашим услугам для технической экспертизы, коммерческих предложений и консультаций.",
-    cont_hq: "Главный офис", 
-    cont_hq_desc: "Улица Албишоара 84/6, Кишинев, Республика Молдова", 
-    cont_email: "Адрес Email", 
-    cont_phone: "Телефон",
+    cont_hq: "Главный офис", cont_hq_desc: "Улица Албишоара 84/6, Кишинев, Республика Молдова", cont_email: "Адрес Email", cont_phone: "Телефон",
     footer_rights: "&copy; 2026 Cominteg Prim SRL. Все права защищены. Выполнение по самым высоким стандартам."
   }
 };
+
+// Pozițiile slider-ului pentru limbi
+const langPositions = { 'ro': 0, 'en': 1, 'ru': 2 };
 
 function changeLanguage(lang) {
   localStorage.setItem('selectedLang', lang);
@@ -96,6 +93,13 @@ function changeLanguage(lang) {
     }
   });
 
+  // Mutăm slider-ul Apple-style peste butonul corect
+  const slider = document.querySelector('.lang-slider');
+  if(slider) {
+    slider.style.transform = `translateX(${langPositions[lang] * 100}%)`;
+  }
+
+  // Setăm culoarea butonului
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.remove('active');
     if (btn.getAttribute('data-lang') === lang) {
