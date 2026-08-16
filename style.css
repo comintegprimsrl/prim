@@ -37,191 +37,103 @@
   --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-html {
-  scroll-behavior: smooth;
-  font-family: var(--font-main);
-}
-
-body {
-  color: var(--text-main);
-  background-color: var(--white);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--dark);
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-.container {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
+html { scroll-behavior: smooth; font-family: var(--font-main); }
+body { color: var(--text-main); background-color: var(--white); line-height: 1.6; overflow-x: hidden; }
+h1, h2, h3, h4, h5, h6 { color: var(--dark); font-weight: 800; line-height: 1.2; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.container { max-width: 1320px; margin: 0 auto; padding: 0 24px; }
 .section { padding: 120px 0; }
 .bg-dark { background-color: var(--dark); }
 .bg-gray { background-color: var(--gray); }
 
 /* --- PRELOADER --- */
-.preloader {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, #1E293B 0%, #0F172A 100%);
-  z-index: 999999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.6s ease;
-}
-.loader-brand {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  white-space: nowrap;
-  animation: pulseLogo 2s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
-}
+.preloader { position: fixed; inset: 0; background: radial-gradient(circle at center, #1E293B 0%, #0F172A 100%); z-index: 999999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.6s ease; }
+.loader-brand { font-size: 1.6rem; font-weight: 800; color: var(--white); margin-bottom: 20px; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 10px; white-space: nowrap; animation: pulseLogo 2s infinite alternate cubic-bezier(0.4, 0, 0.2, 1); }
 .loader-brand span { color: var(--primary); }
 .loader-brand i { color: var(--primary); font-size: 2rem; }
-@keyframes pulseLogo {
-  0% { transform: scale(1); text-shadow: 0 0 10px rgba(245, 158, 11, 0); }
-  100% { transform: scale(1.08); text-shadow: 0 0 40px rgba(245, 158, 11, 0.6); }
-}
-.progress-bar {
-  width: 200px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-  border-radius: 10px;
-  overflow: hidden;
-}
-.progress {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #D97706, #F59E0B, #FFD166);
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
-  border-radius: 10px;
-  transition: width 1s ease;
-}
+@keyframes pulseLogo { 0% { transform: scale(1); text-shadow: 0 0 10px rgba(245, 158, 11, 0); } 100% { transform: scale(1.08); text-shadow: 0 0 40px rgba(245, 158, 11, 0.6); } }
+.progress-bar { width: 200px; height: 6px; background: rgba(255, 255, 255, 0.05); box-shadow: inset 0 0 10px rgba(0,0,0,0.5); border-radius: 10px; overflow: hidden; }
+.progress { width: 0%; height: 100%; background: linear-gradient(90deg, #D97706, #F59E0B, #FFD166); box-shadow: 0 0 20px rgba(245, 158, 11, 0.8); border-radius: 10px; transition: width 1s ease; }
 
 /* --- BUTTONS --- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  font-weight: 700;
-  font-size: 15px;
-  transition: var(--transition-bounce);
-  cursor: pointer;
-  border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: rgba(255, 255, 255, 0.15);
-  transform: translate(-50%, -50%) scale(0);
-  border-radius: 50%;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: -1;
-}
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: var(--radius); font-weight: 700; font-size: 15px; transition: var(--transition-bounce); cursor: pointer; border: 2px solid transparent; position: relative; overflow: hidden; z-index: 1; }
+.btn::after { content: ''; position: absolute; top: 50%; left: 50%; width: 300%; height: 300%; background: rgba(255, 255, 255, 0.15); transform: translate(-50%, -50%) scale(0); border-radius: 50%; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); z-index: -1; }
 .btn:hover::after { transform: translate(-50%, -50%) scale(1); }
 .btn-primary { background-color: var(--primary); color: var(--white); box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3); }
 .btn-primary:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 15px 35px rgba(245, 158, 11, 0.5); background-color: var(--primary-dark); }
 .btn-outline { border-color: var(--white); color: var(--white); }
 .btn-outline:hover { background-color: var(--white); color: var(--dark); transform: translateY(-3px); }
 
-/* --- HEADER --- */
+/* --- HEADER STRUCTURĂ --- */
 .header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 24px 0; transition: var(--transition); background: transparent; }
 .header.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px); padding: 16px 0; box-shadow: var(--shadow-md); }
-.nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
+.nav-wrapper { display: flex; align-items: center; justify-content: space-between; width: 100%; }
 .brand-logo { display: flex; align-items: center; gap: 12px; font-size: 22px; color: var(--white); transition: var(--transition); }
 .header.scrolled .brand-logo { color: var(--dark); }
 .brand-text { display: flex; flex-direction: row; gap: 5px; white-space: nowrap !important; }
 .brand-text strong { font-weight: 800; }
 .brand-text span { font-weight: 300; opacity: 0.9; }
 .accent-color { color: var(--primary); font-size: 28px; }
-.navbar { display: flex; align-items: center; gap: 40px; }
+.header-actions { display: flex; align-items: center; gap: 20px; }
+
+/* NAVBAR DESKTOP */
+.navbar { display: flex; align-items: center; gap: 40px; margin: 0 auto; }
 .nav-list { display: flex; gap: 32px; }
 .nav-link { font-weight: 600; font-size: 15px; color: rgba(255, 255, 255, 0.8); position: relative; transition: var(--transition); }
 .header.scrolled .nav-link { color: var(--text-main); }
 .nav-link:hover, .nav-link.active { color: var(--primary); }
 .nav-link::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 2px; background: var(--primary); transition: var(--transition); }
 .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
 .menu-toggle { display: none; font-size: 24px; color: var(--white); cursor: pointer; }
 .header.scrolled .menu-toggle { color: var(--dark); }
 
-/* --- LANGUAGE SWITCHER ULTRA-PREMIUM --- */
-.lang-switcher, .footer-lang-switcher {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 6px;
-  border-radius: 50px;
+/* --- LIMBĂ ULTRA-PREMIUM (IOS STYLE - FONT CORECTAT) --- */
+.ultra-lang-switcher {
+  position: relative;
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 4px;
   backdrop-filter: blur(10px);
-  gap: 4px;
-  margin-left: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.header.scrolled .lang-switcher {
-  background: rgba(15, 23, 42, 0.05);
-  border-color: rgba(15, 23, 42, 0.1);
-}
-.lang-icon {
-  color: var(--primary);
-  font-size: 16px;
-  margin: 0 8px;
+.header.scrolled .ultra-lang-switcher { background: rgba(15, 23, 42, 0.05); border-color: rgba(15, 23, 42, 0.1); }
+.lang-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(33.33% - 2.6px);
+  height: calc(100% - 8px);
+  background: var(--primary);
+  border-radius: 20px;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 1;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.4);
 }
 .lang-btn {
-  background: transparent;
+  position: relative;
+  z-index: 2;
+  background: none;
   border: none;
   color: rgba(255, 255, 255, 0.7);
   padding: 6px 14px;
-  border-radius: 30px;
+  
+  /* FONTUL NOU PENTRU LIMBI: Nativ iOS/Mac, curat, ne-întins */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 600; /* Subțire și elegant */
+  letter-spacing: 0.3px; /* Spațiere naturală */
+  
   cursor: pointer;
-  transition: var(--transition-bounce);
-  position: relative;
+  transition: color 0.4s ease;
 }
 .header.scrolled .lang-btn { color: var(--text-main); }
 .lang-btn:hover { color: var(--white); }
 .header.scrolled .lang-btn:hover { color: var(--primary); }
-.lang-btn.active {
-  color: var(--dark) !important;
-  background: var(--primary);
-  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.5);
-  transform: scale(1.05);
-}
+.lang-btn.active { color: var(--dark) !important; font-weight: 700; }
 .header.scrolled .lang-btn.active { color: var(--white) !important; }
-.footer-lang-switcher { display: none; margin-top: 25px; justify-content: center; }
 
 /* --- HERO --- */
 .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding-top: 80px; overflow: hidden; }
@@ -242,7 +154,7 @@ ul {
 .light-text .section-title { color: var(--white); }
 .text-center { text-align: center; }
 
-/* --- ABOUT --- */
+/* --- ABOUT & CERTIFICATE ISO OFICIALE --- */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .about-image-wrapper { position: relative; }
 .about-img { width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
@@ -250,9 +162,71 @@ ul {
 .experience-card i { font-size: 32px; color: var(--primary); margin-bottom: 12px; }
 .about-content .lead-text { font-size: 1.25rem; color: var(--secondary); font-weight: 600; margin-bottom: 20px; }
 .about-content p { margin-bottom: 16px; }
-.feature-list { margin-top: 32px; }
-.feature-list li { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px; font-weight: 600; color: var(--secondary); }
-.feature-list i { color: var(--white); background: var(--primary); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+
+/* DESIGN SIGILII ISO */
+.iso-badges-container { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  margin-top: 25px; 
+}
+.iso-badge-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-bounce);
+  cursor: default;
+}
+.iso-badge-card:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+.iso-official-seal {
+  width: 52px;
+  height: 52px;
+  border: 2px solid #0B3A61; /* Albastrul oficial ISO */
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 3px #0B3A61; /* Margine dublă oficială */
+  flex-shrink: 0;
+}
+.iso-official-seal .iso-text {
+  font-weight: 900;
+  font-size: 15px;
+  color: #E31837; /* Roșul oficial ISO */
+  line-height: 1;
+  margin-bottom: 2px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+.iso-official-seal .iso-num {
+  font-weight: 800;
+  font-size: 10px;
+  color: #0B3A61;
+  line-height: 1;
+  font-family: Arial, sans-serif;
+}
+.iso-details strong {
+  display: block;
+  font-size: 15px;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+.iso-details span {
+  font-size: 13px;
+  color: var(--text-main);
+  font-weight: 600;
+}
 
 /* --- SERVICES --- */
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 60px; }
@@ -329,17 +303,20 @@ ul {
 }
 @media (max-width: 768px) {
   .navbar { display: none !important; }
-  .menu-toggle { display: none !important; }
-  .nav-wrapper { justify-content: center !important; }
-  .brand-logo { font-size: 18px !important; gap: 8px !important; }
-  .brand-logo i { font-size: 22px !important; }
+  
+  /* Pe telefon afișăm Logo stânga și Acțiuni dreapta */
+  .nav-wrapper { justify-content: space-between !important; }
+  .brand-logo { font-size: 15px !important; gap: 6px !important; }
+  .brand-logo i { font-size: 18px !important; }
+  
+  .header-actions { gap: 10px; }
+  .lang-btn { padding: 4px 8px; font-size: 11px; letter-spacing: 0px; }
+
   .hero-title { font-size: 2.5rem; }
   .hero-actions { flex-direction: column; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-img { height: 250px; }
   .mobile-only { display: flex; }
-  .lang-switcher { display: none !important; }
-  .footer-lang-switcher { display: flex; }
 }
 
 /* --- SIMULARE TELEFON PE PC --- */
@@ -347,15 +324,15 @@ body.simulare-mobil-activa { background-color: #0B1120; }
 body.simulare-mobil-activa #main-site-wrapper { max-width: 430px; margin: 0 auto; background-color: var(--white); min-height: 100vh; box-shadow: 0 0 80px rgba(0,0,0,0.9); position: relative; overflow-x: hidden; }
 body.simulare-mobil-activa .header { max-width: 430px; left: 50%; transform: translateX(-50%); }
 body.simulare-mobil-activa .navbar { display: none !important; }
-body.simulare-mobil-activa .menu-toggle { display: none !important; }
-body.simulare-mobil-activa .nav-wrapper { justify-content: center !important; }
-body.simulare-mobil-activa .brand-logo { font-size: 18px !important; gap: 8px !important; }
-body.simulare-mobil-activa .brand-logo i { font-size: 22px !important; }
+body.simulare-mobil-activa .nav-wrapper { justify-content: space-between !important; }
+body.simulare-mobil-activa .brand-logo { font-size: 15px !important; gap: 6px !important; }
+body.simulare-mobil-activa .brand-logo i { font-size: 18px !important; }
+body.simulare-mobil-activa .header-actions { gap: 10px; }
+body.simulare-mobil-activa .lang-btn { padding: 4px 8px; font-size: 11px; letter-spacing: 0px; }
+
 body.simulare-mobil-activa .about-grid, body.simulare-mobil-activa .services-grid, body.simulare-mobil-activa .portfolio-grid, body.simulare-mobil-activa .contact-grid { grid-template-columns: 1fr !important; }
 body.simulare-mobil-activa .hero-title { font-size: 2.5rem !important; }
 body.simulare-mobil-activa .hero-actions { flex-direction: column; }
 body.simulare-mobil-activa .contact-map { min-height: 250px; margin-top: 20px; }
 body.simulare-mobil-activa .portfolio-img { height: 250px; }
 body.simulare-mobil-activa .mobile-only { display: flex; }
-body.simulare-mobil-activa .lang-switcher { display: none !important; }
-body.simulare-mobil-activa .footer-lang-switcher { display: flex; }
