@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cominteg Prim SRL | Rețele Inginerești & Infrastructură</title>
   
-  <link rel="icon" type="image/x-icon" href="iconcominteg.ico?v=3">
+  <link rel="icon" type="image/x-icon" href="iconcominteg.ico">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +47,6 @@
     <!-- Header -->
     <header class="header" id="header">
       <div class="container nav-wrapper">
-        <!-- LOGO STÂNGA -->
         <a href="#" class="brand-logo">
           <i class="fa-solid fa-helmet-safety accent-color"></i>
           <div class="brand-text">
@@ -65,9 +64,7 @@
           <a href="#contact" class="btn btn-primary nav-btn" data-i18n="nav_contact">Contact</a>
         </nav>
 
-        <!-- ACȚIUNI DREAPTA (Limbi + Meniu) -->
         <div class="header-actions">
-          <!-- Schimbător Limbă Ultra-Premium -->
           <div class="ultra-lang-switcher">
             <div class="lang-slider"></div>
             <button onclick="changeLanguage('ro')" class="lang-btn active" data-lang="ro">RO</button>
@@ -91,7 +88,7 @@
           <div class="hero-badge" data-i18n="hero_badge">Excelență în Infrastructură & Rețele Inginerești</div>
           <h1 class="hero-title" data-i18n="hero_title">Construim infrastructura de mâine. <span>Sigur. Durabil.</span></h1>
           <p class="hero-description" data-i18n="hero_desc">
-            Cominteg Prim SRL livrează soluții tehnice complexe, de la magistrale de apeduct și canalizare pluvială, la puncte termice și construcții rutiere de înaltă performanță.
+            Cominteg Prim SRL livrează soluții tehnice complexe, de la magistrale de apeduct și canalizare pluvială, la puncte termice și rețele edilitare de înaltă performanță.
           </p>
           <div class="hero-actions">
             <a href="#portofoliu" class="btn btn-primary btn-lg" data-i18n="hero_btn1">Explorează Lucrările</a>
@@ -116,43 +113,35 @@
           <span class="section-tag" data-i18n="about_tag">Despre Noi</span>
           <h2 class="section-title" data-i18n="about_title">Experți în <span>rețele inginerești</span> și infrastructură</h2>
           <p class="lead-text" data-i18n="about_lead">
-            <strong>Cominteg Prim SRL</strong> este o companie de top specializată în proiectarea, execuția și reabilitarea de rețele inginerești și infrastructură rutieră.
+            <strong>Cominteg Prim SRL</strong> este o companie de top specializată în proiectarea, execuția și reabilitarea de rețele inginerești și infrastructură edilitară.
           </p>
           <p data-i18n="about_p1">
             Dispunând de o echipă tehnică înalt calificată și un parc de utilaje performant, executăm cu precizie lucrări complexe: de la magistrale de apeduct și rețele de canalizare pluvială, la infrastructură pentru puncte termice tehnologice, coordonând implementarea sistemelor în cascadă. 
           </p>
 
-          <!-- CERTIFICATE ISO OFICIALE -->
+          <!-- CERTIFICATE ISO CU IMAGINI -->
           <div class="iso-badges-container">
             <div class="iso-badge-card" title="Certificat ISO 9001">
-              <div class="iso-official-seal">
-                <span class="iso-text">ISO</span>
-                <span class="iso-num">9001</span>
-              </div>
+              <img src="https://www.arenasolutions.com/wp-content/uploads/what-is-iso-9001-compliance.png" alt="ISO 9001" class="iso-seal-img">
               <div class="iso-details">
-                <strong>ISO 9001</strong>
+                <strong>ISO 9001:2015</strong>
                 <span data-i18n="iso_9001">Managementul Calității</span>
               </div>
             </div>
             
             <div class="iso-badge-card" title="Certificat ISO 14001">
-              <div class="iso-official-seal">
-                <span class="iso-text">ISO</span>
-                <span class="iso-num">14001</span>
-              </div>
+              <!-- Aici am crescut zoom-ul la 2.3 pentru a elimina marginile albe din fotografie -->
+              <img src="https://aboutromynox.com/wp-content/uploads/2024/02/ROMYNOX-ISO14001.jpg" alt="ISO 14001" class="iso-seal-img" style="transform: scale(2.3);">
               <div class="iso-details">
-                <strong>ISO 14001</strong>
+                <strong>ISO 14001:2015</strong>
                 <span data-i18n="iso_14001">Management de Mediu</span>
               </div>
             </div>
 
             <div class="iso-badge-card" title="Certificat ISO 45001">
-              <div class="iso-official-seal">
-                <span class="iso-text">ISO</span>
-                <span class="iso-num">45001</span>
-              </div>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQis-rVVVNGJmI6mHZ-OF6Mpdu-Ic05wm1OAwfhkBCf7Q&s=10" alt="ISO 45001" class="iso-seal-img">
               <div class="iso-details">
-                <strong>ISO 45001</strong>
+                <strong>ISO 45001:2018</strong>
                 <span data-i18n="iso_45001">Sănătate și Securitate Ocupațională</span>
               </div>
             </div>
@@ -167,26 +156,26 @@
       <div class="container">
         <div class="section-header text-center light-text" data-aos="fade-up">
           <span class="section-tag" data-i18n="serv_tag">Domenii de Activitate</span>
-          <h2 class="section-title" data-i18n="serv_title">Construcții Generale – Sisteme Inginerești</h2>
+          <h2 class="section-title" data-i18n="serv_title">Servicii Integrate de Construcții</h2>
         </div>
 
         <div class="services-grid">
-          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <!-- CARD 1 -->
+          <div class="service-card interactive-card" onclick="openGallery('edilitare')" data-aos="fade-up" data-aos-delay="100">
             <div class="service-icon"><i class="fa-solid fa-water"></i></div>
             <h3 data-i18n="serv1_title">Rețele Edilitare & Canalizare</h3>
-            <p data-i18n="serv1_desc">Construcție de rețele pentru ape pluviale, magistrale de apă potabilă și subtraversări complexe de bulevarde.</p>
+            <p data-i18n="serv1_desc">Construcție de rețele pentru ape pluviale, subtraversări complexe de bulevarde și execuția sistemelor de drenaj.</p>
+            <div class="click-to-view"><i class="fa-solid fa-image"></i> <span data-i18n="click_gallery">Vezi Imaginea</span></div>
           </div>
           
-          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-icon"><i class="fa-solid fa-temperature-high"></i></div>
-            <h3 data-i18n="serv2_title">Termoficare</h3>
-            <p data-i18n="serv2_desc">Proiectare, montaj și reabilitare pentru rețele termice magistrale, puncte termice tehnologice și sisteme avansate de încălzire în cascadă.</p>
-          </div>
-
-          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-icon"><i class="fa-solid fa-faucet-drip"></i></div>
-            <h3 data-i18n="serv3_title">Apeduct</h3>
-            <p data-i18n="serv3_desc">Execuție și extindere de magistrale de alimentare cu apă potabilă, branșamente hidraulice și rețele de înaltă presiune.</p>
+          <!-- CARD 2 -->
+          <div class="service-card interactive-card" onclick="openGallery('termoficare')" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+              <i class="fa-solid fa-faucet-drip"></i>
+            </div>
+            <h3 data-i18n="serv2_title">Termoficare & Apeduct</h3>
+            <p data-i18n="serv2_desc">Proiectare, execuție și reabilitare pentru rețele termice magistrale, puncte tehnologice și sisteme avansate de încălzire în cascadă, integrate cu magistrale de apă potabilă și rețele de înaltă presiune.</p>
+            <div class="click-to-view"><i class="fa-solid fa-image"></i> <span data-i18n="click_gallery">Vezi Imaginea</span></div>
           </div>
         </div>
       </div>
@@ -201,10 +190,10 @@
         </div>
 
         <div class="portfolio-grid">
+          <!-- PORTFOLIO 1 -->
           <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="100">
             <div class="portfolio-img">
               <img src="bacio.jpeg" alt="Rețea de canalizare pluvială - Satul German">
-              <div class="portfolio-overlay"><a href="#" class="view-btn"><i class="fa-solid fa-arrow-right"></i></a></div>
             </div>
             <div class="portfolio-info">
               <span class="portfolio-category" data-i18n="port1_cat">Rețele Edilitare</span>
@@ -212,10 +201,11 @@
               <p data-i18n="port1_desc">Execuția complexă a rețelei de colectare a apelor pluviale pentru un ansamblu rezidențial din zona Satul German, asigurând gestionarea eficientă și sigură a apelor meteorice.</p>
             </div>
           </div>
+
+          <!-- PORTFOLIO 2 -->
           <div class="portfolio-card" data-aos="zoom-in" data-aos-delay="200">
             <div class="portfolio-img">
               <img src="poza aeroport.jpeg" alt="Punct Termic - Aeroportul Iași">
-              <div class="portfolio-overlay"><a href="#" class="view-btn"><i class="fa-solid fa-arrow-right"></i></a></div>
             </div>
             <div class="portfolio-info">
               <span class="portfolio-category" data-i18n="port2_cat">Instalații Termice</span>
@@ -288,6 +278,17 @@
     </footer>
     
   </div> 
+
+  <!-- FEREASTRA MODALĂ PENTRU IMAGINE -->
+  <div id="galleryModal" class="gallery-modal">
+    <div class="gallery-overlay" onclick="closeGallery()"></div>
+    <span class="close-gallery" onclick="closeGallery()"><i class="fa-solid fa-xmark"></i></span>
+    <div class="gallery-content">
+      <button class="gallery-btn prev-btn" onclick="changeImage(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+      <img id="galleryImage" src="" alt="Vizualizare Proiect">
+      <button class="gallery-btn next-btn" onclick="changeImage(1)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
