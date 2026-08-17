@@ -1,26 +1,90 @@
 /* ==========================================================================
-   INTERACTIVE LOGIC, ANIMATIONS & TRANSLATIONS - COMINTEG PRIM SRL
+   INTERACTIVE LOGIC, ANIMATIONS, TRANSLATIONS & LIGHTBOX - COMINTEG PRIM SRL
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   AICI SUNT CELE 2 IMAGINI CARE SE VOR DESCHIDE (CÂTE UNA PENTRU FIECARE)
+-------------------------------------------------------------------------- */
+const galleries = {
+  // Imaginea pentru "Rețele Edilitare & Canalizare"
+  'edilitare': [
+    'https://www.image2url.com/r2/default/images/1786948088533-63f98db6-1dae-45ce-bca2-07bdbf6e28e4.jpeg'
+  ],
+  // Imaginea pentru "Termoficare & Apeduct"
+  'termoficare': [
+    'https://www.image2url.com/r2/default/images/1786947814371-2b6f64e1-4260-4809-914d-157084c40823.jpeg'
+  ]
+};
+
+let currentGalleryArray = [];
+let currentImageIndex = 0;
+
+// Funcția care deschide imaginea
+function openGallery(galleryId) {
+  currentGalleryArray = galleries[galleryId];
+  
+  if (!currentGalleryArray || currentGalleryArray.length === 0) return;
+  
+  currentImageIndex = 0;
+  document.getElementById('galleryImage').src = currentGalleryArray[currentImageIndex];
+  
+  // ASCUNDE SĂGEȚILE DE NAVIGARE PENTRU CĂ AVEM DOAR O SINGURĂ POZĂ
+  const prevBtn = document.querySelector('.prev-btn');
+  const nextBtn = document.querySelector('.next-btn');
+  
+  if (currentGalleryArray.length <= 1) {
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+  } else {
+    prevBtn.style.display = 'flex';
+    nextBtn.style.display = 'flex';
+  }
+  
+  const modal = document.getElementById('galleryModal');
+  modal.style.display = 'flex';
+  setTimeout(() => modal.style.opacity = '1', 10);
+}
+
+// Funcția care închide imaginea
+function closeGallery() {
+  const modal = document.getElementById('galleryModal');
+  modal.style.opacity = '0';
+  setTimeout(() => {
+    modal.style.display = 'none';
+    document.getElementById('galleryImage').src = "";
+  }, 400);
+}
+
+// (Păstrăm funcția în caz că vrei vreodată să mai adaugi poze în plus pe viitor)
+function changeImage(step) {
+  currentImageIndex += step;
+  if (currentImageIndex < 0) { currentImageIndex = currentGalleryArray.length - 1; }
+  if (currentImageIndex >= currentGalleryArray.length) { currentImageIndex = 0; }
+  document.getElementById('galleryImage').src = currentGalleryArray[currentImageIndex];
+}
+
+/* --------------------------------------------------------------------------
+   SISTEMUL DE TRADUCERI
+-------------------------------------------------------------------------- */
 const translations = {
   ro: {
+    click_gallery: "Vezi Imaginea",
     intro_title: "Vizualizare Platformă", intro_desc: "Selectează dispozitivul pentru a încărca designul potrivit.", intro_btn_pc: "Calculator", intro_btn_mob: "Telefon",
     nav_home: "Acasă", nav_about: "Despre Noi", nav_services: "Servicii", nav_portfolio: "Portofoliu", nav_contact: "Contact",
     hero_badge: "Excelență în Infrastructură & Rețele Inginerești",
     hero_title: "Construim infrastructura de mâine. <span>Sigur. Durabil.</span>",
-    hero_desc: "Cominteg Prim SRL livrează soluții tehnice complexe, de la magistrale de apeduct și canalizare pluvială, la puncte termice și construcții rutiere de înaltă performanță.",
+    hero_desc: "Cominteg Prim SRL livrează soluții tehnice complexe, de la magistrale de apeduct și canalizare pluvială, la puncte termice și rețele edilitare de înaltă performanță.",
     hero_btn1: "Explorează Lucrările", hero_btn2: "Descoperă Compania",
     about_tag: "Despre Noi", about_title: "Experți în <span>rețele inginerești</span> și infrastructură",
-    about_lead: "<strong>Cominteg Prim SRL</strong> este o companie de top specializată în proiectarea, execuția și reabilitarea de rețele inginerești și infrastructură rutieră.",
+    about_lead: "<strong>Cominteg Prim SRL</strong> este o companie de top specializată în proiectarea, execuția și reabilitarea de rețele inginerești și infrastructură edilitară.",
     about_p1: "Dispunând de o echipă tehnică înalt calificată și un parc de utilaje performant, executăm cu precizie lucrări complexe: de la magistrale de apeduct și rețele de canalizare pluvială, la infrastructură pentru puncte termice tehnologice, coordonând implementarea sistemelor în cascadă.",
     about_p2: "Fiecare proiect gestionat de <strong>Cominteg Prim SRL</strong> reflectă angajamentul nostru ferm pentru calitate, durabilitate, siguranță și funcționalitate pe termen lung a rețelelor inginerești construite, respectând cu strictețe normele de execuție obiective.",
     about_list1: "Execuție precisă a rețelelor inginerești complexe (apă, canalizare, termoficare)", about_list2: "Management de șantier eficient, bazat pe evaluări tehnice riguroase",
     iso_9001: "Managementul Calității", iso_14001: "Management de Mediu", iso_45001: "Sănătate și Securitate",
     qual_title: "Calitate Garantată", qual_desc: "Standarde tehnice superioare",
     serv_tag: "Domenii de Activitate", serv_title: "Servicii Integrate de Construcții",
-    serv1_title: "Rețele Edilitare & Canalizare", serv1_desc: "Construcție de rețele pentru ape pluviale, magistrale de apă potabilă și subtraversări complexe de bulevarde.",
-    serv2_title: "Termoficare", serv2_desc: "Proiectare, montaj și reabilitare pentru rețele termice magistrale, puncte termice tehnologice și sisteme avansate de încălzire în cascadă.",
-    serv3_title: "Apeduct", serv3_desc: "Execuție și extindere de magistrale de alimentare cu apă potabilă, branșamente hidraulice și rețele de înaltă presiune.",
+    serv1_title: "Rețele Edilitare & Canalizare", serv1_desc: "Construcție de rețele pentru ape pluviale, subtraversări complexe de bulevarde și execuția sistemelor de drenaj.",
+    serv2_title: "Termoficare & Apeduct", serv2_desc: "Proiectare, execuție și reabilitare pentru rețele termice magistrale, puncte tehnologice și sisteme avansate de încălzire în cascadă, integrate cu magistrale de apă potabilă și rețele de înaltă presiune.",
     port_tag: "Experiență Demonstrată", port_title: "Proiecte de Referință",
     port1_cat: "Rețele Edilitare", port1_title: "Rețea de canalizare pluvială - Satul German", port1_desc: "Execuția complexă a rețelei de colectare a apelor pluviale pentru un ansamblu rezidențial din zona Satul German, asigurând gestionarea eficientă și sigură a apelor meteorice.",
     port2_cat: "Instalații Termice", port2_title: "Punct Termic - Aeroportul Iași", port2_desc: "Amenajarea și implementarea punctului termic tehnologic de înaltă performanță aferent terminalului Aeroportului Internațional Iași, respectând cele mai stricte norme de calitate.",
@@ -29,23 +93,23 @@ const translations = {
     footer_rights: "&copy; 2026 Cominteg Prim SRL. Toate drepturile rezervate. Execuție la cele mai înalte standarde."
   },
   en: {
+    click_gallery: "View Image",
     intro_title: "Platform View", intro_desc: "Select your device to load the appropriate design.", intro_btn_pc: "Desktop", intro_btn_mob: "Mobile",
     nav_home: "Home", nav_about: "About Us", nav_services: "Services", nav_portfolio: "Portfolio", nav_contact: "Contact",
     hero_badge: "Excellence in Infrastructure & Engineering Networks",
     hero_title: "Building tomorrow's infrastructure. <span>Safe. Durable.</span>",
-    hero_desc: "Cominteg Prim SRL delivers complex technical solutions, from aqueduct and stormwater networks to thermal points and high-performance road construction.",
+    hero_desc: "Cominteg Prim SRL delivers complex technical solutions, from aqueduct and stormwater networks to thermal points and high-performance civil infrastructure.",
     hero_btn1: "Explore Projects", hero_btn2: "Discover the Company",
     about_tag: "About Us", about_title: "Experts in <span>engineering networks</span> and infrastructure",
-    about_lead: "<strong>Cominteg Prim SRL</strong> is a top company specialized in the design, execution, and rehabilitation of engineering networks and road infrastructure.",
+    about_lead: "<strong>Cominteg Prim SRL</strong> is a top company specialized in the design, execution, and rehabilitation of engineering networks and civil infrastructure.",
     about_p1: "With a highly qualified technical team and high-performance equipment, we precisely execute complex works: from aqueduct mains and stormwater drainage networks to infrastructure for thermal points.",
     about_p2: "Every project managed by <strong>Cominteg Prim SRL</strong> reflects our firm commitment to quality, durability, safety, and long-term functionality, strictly complying with execution standards.",
     about_list1: "Precise execution of complex engineering networks (water, sewage, heating)", about_list2: "Efficient site management, based on rigorous technical evaluations",
     iso_9001: "Quality Management", iso_14001: "Environmental Management", iso_45001: "Health & Safety",
     qual_title: "Guaranteed Quality", qual_desc: "Superior technical standards",
     serv_tag: "Areas of Activity", serv_title: "Integrated Construction Services",
-    serv1_title: "Edilitary & Sewage Networks", serv1_desc: "Construction of stormwater networks, drinking water mains, and complex boulevard undercrossings.",
-    serv2_title: "Thermal Heating", serv2_desc: "Design, installation, and rehabilitation for main thermal networks, technological thermal points, and advanced cascade heating systems.",
-    serv3_title: "Aqueduct", serv3_desc: "Execution and expansion of drinking water supply mains, hydraulic connections, and high-pressure networks.",
+    serv1_title: "Edilitary & Sewage Networks", serv1_desc: "Construction of stormwater networks, complex boulevard undercrossings, and drainage systems execution.",
+    serv2_title: "Thermal Heating & Aqueduct", serv2_desc: "Design, execution, and rehabilitation for main thermal networks, technological points, and advanced cascade heating systems, integrated with drinking water supply mains and high-pressure networks.",
     port_tag: "Demonstrated Experience", port_title: "Reference Projects",
     port1_cat: "Edilitary Networks", port1_title: "Stormwater drainage network - Satul German", port1_desc: "Complex execution of the stormwater collection network for a residential complex in the Satul German area, ensuring efficient and safe management of meteoric waters.",
     port2_cat: "Thermal Installations", port2_title: "Thermal Point - Iași Airport", port2_desc: "Arrangement and implementation of the high-performance technological thermal point for the Iași International Airport terminal, respecting the strictest quality standards.",
@@ -54,23 +118,23 @@ const translations = {
     footer_rights: "&copy; 2026 Cominteg Prim SRL. All rights reserved. Execution at the highest standards."
   },
   ru: {
+    click_gallery: "Смотреть изображение",
     intro_title: "Просмотр платформы", intro_desc: "Выберите устройство для загрузки подходящего дизайна.", intro_btn_pc: "Компьютер", intro_btn_mob: "Телефон",
     nav_home: "Главная", nav_about: "О нас", nav_services: "Услуги", nav_portfolio: "Портфолио", nav_contact: "Контакты",
     hero_badge: "Передовой опыт в инфраструктуре и инженерных сетях",
     hero_title: "Строим инфраструктуру завтрашнего дня. <span>Надежно. Долговечно.</span>",
-    hero_desc: "Cominteg Prim SRL предлагает сложные технические решения: от магистралей водоснабжения и ливневой канализации до тепловых пунктов и дорожного строительства.",
+    hero_desc: "Cominteg Prim SRL предлагает сложные технические решения: от магистралей водоснабжения и ливневой канализации до тепловых пунктов и передовой инженерной инфраструктуры.",
     hero_btn1: "Смотреть проекты", hero_btn2: "О компании",
     about_tag: "О нас", about_title: "Эксперты в <span>инженерных сетях</span> и инфраструктуре",
-    about_lead: "<strong>Cominteg Prim SRL</strong> — ведущая компания, специализирующаяся на проектировании, строительстве и реконструкции инженерных сетей и дорожной инфраструктуры.",
+    about_lead: "<strong>Cominteg Prim SRL</strong> — ведущая компания, специализирующаяся на проектировании, строительстве и реконструкции инженерных сетей и гражданской инфраструктуры.",
     about_p1: "Имея высококвалифицированную техническую команду и современное оборудование, мы точно выполняем сложные работы: от магистралей водоснабжения до инфраструктуры технологических тепловых пунктов.",
     about_p2: "Каждый проект <strong>Cominteg Prim SRL</strong> отражает нашу твердую приверженность качеству, долговечности, безопасности и долгосрочной функциональности.",
     about_list1: "Точное выполнение сложных инженерных сетей (вода, канализация, отопление)", about_list2: "Эффективное управление объектом на основе строгих технических оценок",
     iso_9001: "Менеджмент качества", iso_14001: "Экологический менеджмент", iso_45001: "Охрана труда",
     qual_title: "Гарантия качества", qual_desc: "Высокие технические стандарты",
     serv_tag: "Направления деятельности", serv_title: "Комплексные строительные услуги",
-    serv1_title: "Инженерные и канализационные сети", serv1_desc: "Строительство сетей ливневой канализации, магистралей питьевой воды и сложных подземных переходов бульваров.",
-    serv2_title: "Теплоснабжение", serv2_desc: "Проектирование, монтаж и реконструкция магистральных тепловых сетей, тепловых пунктов и каскадных систем отопления.",
-    serv3_title: "Водопровод", serv3_desc: "Строительство и расширение магистралей питьевого водоснабжения, гидравлических соединений и сетей высокого давления.",
+    serv1_title: "Инженерные и канализационные сети", serv1_desc: "Строительство сетей ливневой канализации, сложных подземных переходов бульваров и дренажных систем.",
+    serv2_title: "Теплоснабжение и Водопровод", serv2_desc: "Проектирование, строительство и реконструкция магистральных тепловых сетей, технологических пунктов и передовых каскадных систем отопления, интегрированных с магистралями питьевого водоснабжения.",
     port_tag: "Доказанный опыт", port_title: "Реализованные проекты",
     port1_cat: "Инженерные сети", port1_title: "Сеть ливневой канализации - Satul German", port1_desc: "Комплексное строительство сети сбора ливневых вод для жилого комплекса в районе Satul German, обеспечивающее безопасное управление сточными водами.",
     port2_cat: "Тепловые установки", port2_title: "Тепловой пункт - Аэропорт Яссы", port2_desc: "Обустройство высокопроизводительного технологического теплового пункта для терминала Международного аэропорта Яссы.",
@@ -80,7 +144,6 @@ const translations = {
   }
 };
 
-// Pozițiile slider-ului pentru limbi
 const langPositions = { 'ro': 0, 'en': 1, 'ru': 2 };
 
 function changeLanguage(lang) {
@@ -93,13 +156,11 @@ function changeLanguage(lang) {
     }
   });
 
-  // Mutăm slider-ul Apple-style peste butonul corect
   const slider = document.querySelector('.lang-slider');
   if(slider) {
     slider.style.transform = `translateX(${langPositions[lang] * 100}%)`;
   }
 
-  // Setăm culoarea butonului
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.remove('active');
     if (btn.getAttribute('data-lang') === lang) {
@@ -108,6 +169,9 @@ function changeLanguage(lang) {
   });
 }
 
+/* --------------------------------------------------------------------------
+   FUNCTII DE BAZĂ (Meniu, Scroll, Animații)
+-------------------------------------------------------------------------- */
 function startSite(deviceType) {
   const introModal = document.getElementById('introModal');
   const preloader = document.getElementById('preloader');
@@ -131,7 +195,6 @@ function startSite(deviceType) {
       preloader.style.opacity = '0';
       setTimeout(() => {
         preloader.style.display = 'none';
-        
         mainSite.style.display = 'block'; 
         
         setTimeout(() => {
